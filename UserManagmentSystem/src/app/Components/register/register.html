@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">User Registation Form</h4>
+                </div>
+                <div class="card-body">
+                    <div *ngIf="isRegistered" class="alert alert-success text-center" role="alert">
+                        Registration successful! Redirecting to login...
+                    </div>
+                    <form [formGroup]="register" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">About</label>
+                            <input type="text" class="form-control" placeholder="Enter About" formControlName="about">
+                        </div>
+                         <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="text" class="form-control" placeholder="Enter Password" formControlName="password">
+                        </div>
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    Already have an account?
+                    <a routerLink="/login" class="text-decoration-none">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

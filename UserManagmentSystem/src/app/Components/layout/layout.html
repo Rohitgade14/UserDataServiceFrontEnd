@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary shadow">
+    <!-- <div class="container"> -->
+    <ul class="navbar-nav me-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="user-list">Users</a>
+      </li>
+    </ul>
+    <!-- </div> -->
+
+    <div class="ms-auto">
+      <button class="btn btn-success" type="button" (click)="onLogout()">Logout</button>
+    </div>
+  </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-4">
+  <router-outlet></router-outlet>
+</div>

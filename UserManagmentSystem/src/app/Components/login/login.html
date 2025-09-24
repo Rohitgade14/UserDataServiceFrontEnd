@@ -1,0 +1,52 @@
+<div class="container mt-5">
+     <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0"> Login</h4>
+                </div>
+                       <div class="card-body">
+                          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                                     
+                                 <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                      <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+                                 </div>   
+                                  <div class="mb-3">
+                                       <label class="form-label">Password</label>
+                                       <input type="text" class="form-control" placeholder="Enter Password" formControlName="password">
+                                  </div>
+                                  <div>
+                            <button type="submit" class="btn btn-primary w-100">LOGIN</button>
+                        </div>
+
+                        <div class="card-footer text-muted text-center">
+                            Don't have an account?
+                            <a routerLink="/register" class="text-decoration-none">REGISTER</a>
+                        </div>
+                          </form>
+                       </div>
+                </div>   
+          </div>
+     </div>
+</div>
+
+
+
+
+
+<!-- form bilder with Con -->
+     <!-- loginForm!: FormGroup;
+ constructor(private fb: FormBuilder) {
+  this.loginForm = this.fb.group({
+    email: [''],
+    password: ['']
+  });
+  } -->
+
+   <!-- onLogin() {
+    const loginData: LoginReq = this.loginForm.value as LoginReq;
+    // call your service here
+  } -->
+
+
