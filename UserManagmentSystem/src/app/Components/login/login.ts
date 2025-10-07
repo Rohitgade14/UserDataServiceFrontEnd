@@ -28,10 +28,13 @@ private fb = inject(FormBuilder);
   onLogin() {
 
     const loginData: LoginReq = this.loginForm.value as LoginReq;
+    debugger;
     this.apiServices.loginUser(loginData).subscribe({
       next: (response: any) => {
+         debugger;
         this.loginSucess = true;
         console.log('Login Successful',response);
+        // localStorage.setItem("User",JSON.stringify(response.data))
         setTimeout(() => {
           this.router.navigate(['dashboard']);
         }, 2000)

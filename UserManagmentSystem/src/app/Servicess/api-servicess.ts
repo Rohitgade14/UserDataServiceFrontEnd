@@ -17,6 +17,7 @@ export class ApiServicess {
       
   // this is for Reactive Form login
      loginUser(login:LoginReq):Observable<any> {
+       debugger;
       return this.http.post<any>(this.loginUrl,login);
      }
     // register User

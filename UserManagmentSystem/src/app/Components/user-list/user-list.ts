@@ -20,10 +20,11 @@ export class UserList implements OnInit {
 
   users: User[] = [];
   isLoading: boolean = false;
+  isEditing: boolean = false;
   errorMessage: string = '';
   selectdUser: User | null = null;
   deleteUserId: number | null = null;
-  isEditing: boolean = false;
+
 
   private apiService = inject(ApiServicess);
 
@@ -81,26 +82,26 @@ export class UserList implements OnInit {
     this.deleteUserId = userId;
   }
 
-      // userId: number
+  // userId: number
   deleteUser() {
-      if (this.deleteUserId === null) return;
+    if (this.deleteUserId === null) return;
     // const confirm = window.confirm("are You Sure to Delete The Recoard");
     // if (confirm) {
-      this.apiService.deleteUer(this.deleteUserId ).subscribe({
-        next: (res: any) => {
-          console.log("Deleted Succefully", res);
-          this.deleteUserId = null;
-          this.loadUsers();
-        },
-        error: (error) => {
-          console.log("user Delete is failed", error);
+    this.apiService.deleteUer(this.deleteUserId).subscribe({
+      next: (res: any) => {
+        console.log("Deleted Succefully", res);
+        this.deleteUserId = null;
+        this.loadUsers();
+      },
+      error: (error) => {
+        console.log("user Delete is failed", error);
 
-        }
-      })
+      }
+    })
 
     // }
   }
-      cancelDelete(): void {
+  cancelDelete(): void {
     this.deleteUserId = null;
   }
 
